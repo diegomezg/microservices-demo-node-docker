@@ -18,6 +18,7 @@ services:
         - '4041:4041'
       links: 
           - db-post
+    # run a docker hub image
     # api-auth:
     #   image: diegomezg/api-paulo
     #   restart: always
