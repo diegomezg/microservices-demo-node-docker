@@ -20,7 +20,7 @@ services:
           - db-post
     # run a docker hub image
     # api-auth:
-    #   image: diegomezg/api-paulo
+    #   image: diegomezg/api-image
     #   restart: always
     #   build:
     #     dockerfile: dockerfile
