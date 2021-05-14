@@ -1,5 +1,6 @@
 version: '3'
 services:
+  #service name
     api-posts:
         container_name: user-api
         restart: always
@@ -8,6 +9,7 @@ services:
           - '4040:4040'
         links: 
             - db-user
+    #service name
     api-users:
       container_name: post-api
       restart: always
@@ -24,10 +26,18 @@ services:
     #     context: .
     #   ports:
     #     - '4001:4001'
+    #service name, use this for the mongodb connection
+    #'mongodb://db-user/dbname'
+    # ports are changed but you can use 27017:27017
+    # when you use a service connection the port is assigned
+    # Example:
+    # db-user is docker-compose variable for
+    # service_local_host:port
     db-user:
         image: mongo
         ports:
           - '27018:27017'
+    #service name
     db-post:
       image: mongo
       ports:
