@@ -1,0 +1,34 @@
+version: '3'
+services:
+    api-posts:
+        container_name: user-api
+        restart: always
+        build: ./user-api
+        ports:
+          - '4040:4040'
+        links: 
+            - db-user
+    api-users:
+      container_name: post-api
+      restart: always
+      build: ./post-api
+      ports:
+        - '4041:4041'
+      links: 
+          - db-post
+    # api-auth:
+    #   image: diegomezg/api-paulo
+    #   restart: always
+    #   build:
+    #     dockerfile: dockerfile
+    #     context: .
+    #   ports:
+    #     - '4001:4001'
+    db-user:
+        image: mongo
+        ports:
+          - '27018:27017'
+    db-post:
+      image: mongo
+      ports:
+        - '27019:27017'
