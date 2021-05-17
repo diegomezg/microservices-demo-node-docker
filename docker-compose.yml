@@ -1,6 +1,15 @@
 version: '3'
 services:
   #service name
+    api-gateway:
+      container_name: api-gateway
+      restart: always
+      build: ./api-gateway
+      ports:
+        - '5050:5050'
+      links: 
+          - api-posts
+          - api-users
     api-posts:
         container_name: user-api
         restart: always
