@@ -38,7 +38,7 @@ app.use(require('./routes/post'));
 
 
 // Do connection to database
-mongoose.connect('mongodb://db-post/monolithic', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
+mongoose.connect('mongodb://db-user/monolithic', { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', (error) => {
